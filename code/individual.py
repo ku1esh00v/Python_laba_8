@@ -1,15 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+
 import sys
 
-if __name__ == "__main__":
+
+if __name__ == '__main__':
     my_tuple = tuple(map(int, input("Enter the elements of the tuple separated by a space: ").split()))
 
     last_even_index = -1
 
-    for i in range(len(my_tuple) - 1):
-        if my_tuple[i] % 2 == 0 and my_tuple[i + 1] % 2 == 0:
+    for i, (a, b) in enumerate(zip(my_tuple, my_tuple[1:])):
+        if a % 2 == 0 and b % 2 == 0:
             last_even_index = i
 
     if last_even_index != -1:
